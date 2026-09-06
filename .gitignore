@@ -1,0 +1,19 @@
+# Large local firmware/input files
+payload.bin
+update.zip
+*.img
+extracted/
+
+# Local toolchains and build caches
+.rust/
+winlibs/
+upx/
+*.zip
+*.7z
+*.tar
+*.tar.*
+
+# Misc
+*.log
+*.tmp
+decoded_payload/
