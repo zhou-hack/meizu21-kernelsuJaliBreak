@@ -1,5 +1,7 @@
 # Meizu 21 KernelSU JailBreak Notes
 
+[English](README.md) | [中文](README_ZH.md)
+
 This repository keeps the GhostLock offset package and build notes used to get temporary root on Meizu 21 without unlocking the bootloader.
 
 ## Device
@@ -48,10 +50,10 @@ Then the GhostLock extractor was built from YuKongA/ghostlock-app on Windows usi
 
 ```powershell
 .\tools\extract_rs\target\release\ghostlock-extract.exe `
-  C:\Users\Jinbin\Desktop\mz21\extracted\boot.img `
-  --xbl-config C:\Users\Jinbin\Desktop\mz21\extracted\xbl_config.img `
+  <firmware-workdir>\extracted\boot.img `
+  --xbl-config <firmware-workdir>\extracted\xbl_config.img `
   --format json `
-  --out C:\Users\Jinbin\Desktop\mz21\offsets-meizu21.json
+  --out <firmware-workdir>\offsets-meizu21.json
 ```
 
 The extractor recovered kallsyms and BTF from the image, then checked the vulnerable primitive before writing offsets. The important extractor result was:
@@ -77,8 +79,8 @@ The table was also registered into a local GhostLock checkout:
 
 ```powershell
 .\tools\extract_rs\target\release\ghostlock-extract.exe `
-  C:\Users\Jinbin\Desktop\mz21\extracted\boot.img `
-  --xbl-config C:\Users\Jinbin\Desktop\mz21\extracted\xbl_config.img `
+  <firmware-workdir>\extracted\boot.img `
+  --xbl-config <firmware-workdir>\extracted\xbl_config.img `
   --register
 ```
 
